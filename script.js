@@ -423,7 +423,7 @@ function mostrarIA(motivo) {
 
       <button
           class="btn-secundario"
-          onclick="mostrarResultado(motivo)">
+          onclick="mostrarResultado(motivoEscolhido)">
 
           ↩️ COMEÇAR DE NOVO
 
