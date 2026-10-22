@@ -633,7 +633,7 @@ inicio();
 
 // ATENÇÃO DE SEGURANÇA: Em produção (aplicativos reais publicados), o ideal é que
 // a chave da API fique em um backend seu, e não direto no código do app para evitar roubo.
-const API_KEY = "SUA_CHAVE_DA_API_DO_GOOGLE_AI_STUDIO";
+const API_KEY = "AQ.Ab8RN6J8kv13cPi_c96LarU41BAgvYgLXtbjvuGZZ6x6LmxoZg";
 
 // Instrução de sistema para moldar a personalidade da IA (empática e acolhedora)
 const systemInstruction =
