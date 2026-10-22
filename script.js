@@ -423,11 +423,11 @@ function mostrarIA(motivo) {
 
       <button
           class="btn-secundario"
-          onclick="mostrarResultado">
+          onclick="mostrarResultado(motivo)">
 
           ↩️ COMEÇAR DE NOVO
 
-        </button>V
+        </button>
   `;
 
   atualizarBotaoVoz();
