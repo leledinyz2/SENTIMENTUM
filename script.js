@@ -370,7 +370,7 @@ function selecionarMotivo(index) {
 }
 
 // ==========================================
-// RESULTADO
+// CHAT IA
 // ==========================================
 
 conteudo.innerHTML = ``
