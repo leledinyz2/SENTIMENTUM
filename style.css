@@ -1,34 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --fundo: #e2caff;
   --card: #fffaff;
   --texto: #202437;
   --secundario: #697085;
-  --principal: #8552c7;
-  --principal-escura: #6840a4;
-  --borda: #d9c6ed;
+  --principal: #9e67e1;
+  --principal-escura: #554ce6;
+  --borda: #471869;
   --foco: #111827;
 }
+
 body {
   margin: 0;
-  min-height: 100vh;
-  background: linear-gradient(110deg, var(--fundo), #bfa4e1);
+  min-height: 110vh;
+  background: linear-gradient(to right, var(--fundo), #bfa4e1);
   color: var(--texto);
   font-family: "Nunito", sans-serif;
 }
-button, input { font: inherit; }
-button { color: inherit; }
+
+button {
+  font: inherit;
+}
+
 .app {
-  width: min(100%, 680px);
+  width: min(100%, 560px);
   min-height: 100vh;
   margin: auto;
-  background: linear-gradient(110deg, var(--card), #f6e8ff);
+  background: linear-gradient(to right, var(--card), #f6e8ff);;
   padding: 22px;
   display: flex;
   flex-direction: column;
 }
+
 .topo {
   display: grid;
   grid-template-columns: 48px 1fr 48px;
@@ -36,99 +45,377 @@ button { color: inherit; }
   gap: 12px;
   padding-bottom: 18px;
 }
+
 .logo {
-  width: 48px; height: 48px; display: grid; place-items: center;
-  border-radius: 16px; background: #fcf3ff; font-size: 25px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #fcf3ff;
+  font-size: 25px;
 }
+
 .eyebrow {
-  margin: 0 0 3px; color: var(--principal); font-size: 11px;
-  font-weight: 900; letter-spacing: 1.5px;
+  margin: 0 0 3px;
+  color: var(--principal);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
 }
-h1 { margin: 0; font-size: clamp(20px, 4vw, 28px); line-height: 1.15; }
-h2 { margin: 0; font-size: clamp(26px, 5vw, 34px); line-height: 1.15; }
-p { line-height: 1.5; font-family: "Nunito Sans", sans-serif; }
-.icon-btn, .voltar {
-  border: 1px solid var(--borda); background: white; border-radius: 14px;
-  min-height: 48px; cursor: pointer;
+
+h1 {
+  margin: 0;
+  font-size: 28px;
 }
+
+h2 {
+  margin: 0;
+  font-size: 33px;
+  line-height: 1.15;
+}
+
+p {
+  line-height: 1.5;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.icon-btn,
+.voltar {
+  border: 1px solid var(--borda);
+  background: white;
+  border-radius: 14px;
+  min-height: 48px;
+  cursor: pointer;
+}
+
 .conteudo {
-  flex: 1; display: flex; flex-direction: column; justify-content: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.intro { text-align: center; padding: 20px 4px; }
-.icone-grande { font-size: 85px; margin-bottom: 12px; }
-.subtitulo { color: var(--secundario); font-size: 18px; margin: 12px 0 26px; }
-.btn-principal, .btn-secundario, .btn-whatsapp {
-  width: 100%; border-radius: 16px; padding: 14px 18px; cursor: pointer;
-  font-weight: 800; text-align: center; text-decoration: none;
+
+.intro {
+  text-align: center;
+  padding: 20px 4px;
 }
+
+.icone-grande {
+  font-size: 85px;
+  margin-bottom: 12px;
+}
+
+.subtitulo {
+  color: var(--secundario);
+  font-size: 18px;
+  margin: 12px 0 26px;
+}
+
 .btn-principal {
-  border: 0; border-radius: 18px; padding: 17px 20px; background: var(--principal);
-  color: white; font-size: 18px; box-shadow: 0 8px 20px rgba(108, 99, 255, .22);
+  width: 100%;
+  border: 0;
+  border-radius: 18px;
+  padding: 17px 20px;
+  background: var(--principal);
+  color: white;
+  font-weight: 800;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(108, 99, 255, 0.22);
 }
-.btn-principal:hover { background: var(--principal-escura); }
-.grade { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
+
+.btn-principal:hover {
+  background: var(--principal-escura);
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 24px;
+}
+
 .opcao {
-  min-height: 135px; border: 2px solid var(--borda); border-radius: 22px; background: white;
-  padding: 16px 10px; cursor: pointer; transition: transform .15s, border-color .15s, box-shadow .15s;
+  min-height: 145px;
+  border: 2px solid var(--borda);
+  border-radius: 22px;
+  background: white;
+  padding: 18px 10px;
+  cursor: pointer;
+  transition:
+    transform 0.15s,
+    border-color 0.15s,
+    box-shadow 0.15s;
 }
-.opcao:hover, .motivo:hover { transform: translateY(-2px); border-color: var(--principal); box-shadow: 0 8px 20px rgba(30, 35, 60, .08); }
-.opcao .emoji { display: block; font-size: 46px; margin-bottom: 8px; }
-.opcao .nome { display: block; font-weight: 800; font-size: 16px; }
-.progresso { color: var(--secundario); font-size: 13px; font-weight: 800; margin-bottom: 12px; }
+
+.opcao:hover {
+  transform: translateY(-2px);
+  border-color: var(--principal);
+  box-shadow: 0 8px 20px rgba(30, 35, 60, 0.08);
+}
+
+.opcao .emoji {
+  display: block;
+  font-size: 52px;
+  margin-bottom: 9px;
+}
+
+.opcao .nome {
+  display: block;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.progresso {
+  color: var(--secundario);
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
 .motivo {
-  width: 100%; min-height: 72px; border: 2px solid var(--borda); border-radius: 18px;
-  background: white; padding: 14px; margin-top: 12px; text-align: left; cursor: pointer;
-  font-weight: 700; color: var(--texto); transition: .15s;
+  width: 100%;
+  min-height: 86px;
+  border: 2px solid var(--borda);
+  border-radius: 18px;
+  background: white;
+  padding: 14px;
+  margin-top: 14px;
+  text-align: left;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--texto);
 }
-.resultado { text-align: center; padding: 25px 4px; }
-.resultado .emoji { font-size: 86px; }
-.resultado h2 { margin-top: 8px; }
-.card-resultado { background: #f7f7ff; border: 1px solid #e5e3ff; border-radius: 20px; padding: 16px; margin: 20px 0; }
-.card-resultado p { margin: 8px 0 0; }
-.acoes { display: grid; gap: 10px; }
-.btn-secundario { border: 1px solid var(--borda); background: white; }
-.btn-whatsapp { display: block; border: 0; background: #168a49; color: white; }
-.btn-whatsapp:hover { filter: brightness(.94); }
-button:focus-visible, input:focus-visible, a:focus-visible { outline: 4px solid #c7c4ff; outline-offset: 3px; }
-button:disabled { cursor: wait; opacity: .65; }
-footer { padding-top: 18px; text-align: center; color: #73788a; font-size: 11px; }
-.topo-voz { display: flex; justify-content: flex-end; margin-bottom: 12px; }
-.botao-voz { border: 1px solid var(--borda); background: white; border-radius: 14px; min-height: 44px; padding: 8px 14px; cursor: pointer; font-size: 14px; font-weight: 800; }
-.botao-voz[aria-label="Ativar voz"] { background: #f1f1f1; }
 
-/* Tela de conversa */
-.chat-page { width: 100%; }
-.chat-card {
-  background: #fffdfb; border: 1px solid #eadff2; border-radius: 24px;
-  box-shadow: 0 12px 34px rgba(52, 34, 70, .08); overflow: hidden;
+.motivo:hover {
+  border-color: var(--principal);
 }
-.chat-header { display: flex; align-items: center; gap: 13px; padding: 18px; border-bottom: 1px solid #eee7f2; }
-.bot-avatar { width: 48px; height: 48px; display: grid; place-items: center; flex: 0 0 48px; border-radius: 50%; background: #e8f3e9; font-size: 25px; }
-.chat-header h2 { font-size: 20px; }
-.chat-header p { margin: 3px 0 0; color: var(--secundario); font-size: 14px; }
-.chat-messages { height: min(42vh, 390px); min-height: 230px; overflow-y: auto; padding: 18px; display: flex; flex-direction: column; gap: 12px; }
-.message { max-width: 88%; padding: 12px 15px; border-radius: 17px; line-height: 1.45; white-space: pre-wrap; overflow-wrap: anywhere; }
-.bot-message { align-self: flex-start; background: #f0edf7; border-bottom-left-radius: 5px; }
-.user-message { align-self: flex-end; background: var(--principal); color: white; border-bottom-right-radius: 5px; }
-.chat-input-area { display: flex; gap: 10px; padding: 14px; border-top: 1px solid #eee7f2; }
-.chat-input-area input { flex: 1; min-width: 0; padding: 12px 14px; border: 1px solid #cfc4d8; border-radius: 14px; background: white; }
-.chat-input-area button { border: 0; border-radius: 14px; background: var(--principal); color: white; padding: 0 18px; font-weight: 800; cursor: pointer; }
-.chat-notice { margin: 10px 2px 16px; color: var(--secundario); font-size: 12px; }
-.chat-actions { display: grid; grid-template-columns: 1fr 1.4fr; gap: 10px; margin-top: 14px; }
-.chat-actions button { width: auto; }
 
-@media (max-width: 430px) {
-  .app { padding: 16px; }
-  .topo { grid-template-columns: 42px 1fr 42px; gap: 8px; }
-  .logo { width: 42px; height: 42px; }
-  .grade { gap: 10px; }
-  .opcao { min-height: 122px; }
-  .chat-messages { height: 42vh; padding: 13px; }
-  .chat-actions { grid-template-columns: 1fr; }
-  .chat-input-area { padding: 10px; gap: 7px; }
-  .chat-input-area button { padding: 0 12px; }
+.resultado {
+  text-align: center;
+  padding: 25px 4px;
 }
+
+.resultado .emoji {
+  font-size: 86px;
+}
+
+.resultado h2 {
+  margin-top: 8px;
+}
+
+.card-resultado {
+  background: #f7f7ff;
+  border: 1px solid #e5e3ff;
+  border-radius: 20px;
+  padding: 16px;
+  margin: 20px 0;
+}
+
+.acoes {
+  display: grid;
+  gap: 10px;
+}
+
+.btn-secundario {
+  width: 100%;
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  padding: 14px;
+  background: white;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+button:focus-visible {
+  outline: 4px solid #c7c4ff;
+  outline-offset: 3px;
+}
+
+footer {
+  padding-top: 18px;
+  text-align: center;
+  color: #8a90a3;
+  font-size: 11px;
+}
+.btn-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 0;
+  border-radius: 16px;
+  padding: 14px;
+  background: #25D366;
+  color: white;
+  cursor: pointer;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.15s, filter 0.15s;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.95);
+}
+
+.btn-whatsapp:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 380px) {
+  .app {
+    padding: 16px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  .grade {
+    gap: 10px;
+  }
+  .opcao {
+    min-height: 130px;
+  }
+}
+
 @media (min-width: 700px) {
-  body { padding: 25px; }
-  .app { min-height: calc(100vh - 50px); border-radius: 28px; box-shadow: 0 15px 50px rgba(20, 25, 50, .1); }
+  body {
+    padding: 25px;
+  }
+  .app {
+    min-height: calc(100vh - 50px);
+    border-radius: 28px;
+    box-shadow: 0 15px 50px rgba(20, 25, 50, 0.1);
+  }
+}
+
+/* ==========================================
+   CONTROLE DE VOZ
+   ========================================== */
+
+.topo-voz {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.botao-voz {
+  border: 1px solid var(--borda);
+  background: white;
+  color: var(--texto);
+  border-radius: 14px;
+  min-height: 46px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+
+  transition:
+    transform 0.15s,
+    background 0.15s,
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.botao-voz:hover {
+  transform: translateY(-2px);
+  border-color: var(--principal);
+  box-shadow: 0 6px 16px rgba(30, 35, 60, 0.08);
+}
+
+.botao-voz:active {
+  transform: scale(0.97);
+}
+
+/* ==========================================
+   EFEITO DAS OPÇÕES COM VOZ
+   ========================================== */
+
+.opcao:hover,
+.motivo:hover {
+  transform: translateY(-3px);
+}
+
+/* Destaque quando a opção recebe foco
+   pelo teclado */
+
+.opcao:focus-visible,
+.motivo:focus-visible {
+  outline: 4px solid #c7c4ff;
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   INDICAÇÃO VISUAL DE QUE A OPÇÃO PODE
+   SER OUVIDA
+   ========================================== */
+
+.opcao::after {
+  content: "🔊";
+  display: block;
+  font-size: 13px;
+  margin-top: 6px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.opcao:hover::after {
+  opacity: 0.7;
+}
+
+/* Motivos também mostram o ícone */
+
+.motivo::after {
+  content: " 🔊";
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.motivo:hover::after {
+  opacity: 0.7;
+}
+
+/* ==========================================
+   MODO MUDO
+   ========================================== */
+
+.botao-voz[aria-label="Ativar voz"] {
+  background: #f1f1f1;
+}
+
+/* ==========================================
+   CELULAR
+   ========================================== */
+
+@media (max-width: 600px) {
+  .topo-voz {
+    margin-bottom: 8px;
+  }
+
+  .botao-voz {
+    min-height: 44px;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
+.app-ai {
+  width: min(100%, 560px);
+  min-height: 70vh;
+  margin: auto;
+  margin-top: 20px;
+  background: linear-gradient(to right, #fffbf5, #fffcf1);
+  border-radius: 32px;
+  border: #a39786;
+  padding: 38px;
+  display: flex;
+  flex-direction: column;
+}
+
+#chat-text {
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #4e4e4e;
+  line-height: 2px;
 }
