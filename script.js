@@ -425,7 +425,7 @@ function mostrarIA(motivo) {
           class="btn-secundario"
           onclick="mostrarResultado(null)">
 
-          ↩️ COMEÇAR DE NOVO
+          RESULTADO
 
         </button>
   `;
