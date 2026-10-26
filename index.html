@@ -4,35 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#6c63ff" />
-    <title>Sentimentum</title>
+    <meta name="description" content="Um espaço acolhedor para reconhecer como você está se sentindo. Suas respostas ficam apenas nesta página." />
+    <title>Sentimentum — como estou me sentindo?</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <main class="app" aria-live="polite">
+    <a class="pular-link" href="#app-content">Pular para o conteúdo</a>
+
+    <div class="app">
       <header class="topo">
-        <div class="logo">❤️</div>
-        <div>
+        <div class="marca" aria-hidden="true">♥</div>
+        <div class="identidade">
           <p class="eyebrow">SENTIMENTUM</p>
-          <h1>Como estou me sentindo hoje?</h1>
+          <h1>Um espaço para você</h1>
         </div>
-        <button
-          class="icon-btn"
-          onclick="falar('Voce pode escolher como está se sentindo')"
-          aria-label="Ouvir Instruções"
-        >
-          🔊
-        </button>
+        <div class="controles-topo" aria-label="Preferências desta página">
+          <button id="theme-toggle" class="controle" type="button" aria-pressed="false" aria-label="Ativar tema escuro">
+            <span aria-hidden="true">🌙</span><span class="texto-controle">Tema escuro</span>
+          </button>
+          <button id="voice-toggle" class="controle" type="button" aria-pressed="false" aria-label="Ativar leitura em voz alta">
+            <span aria-hidden="true">🔊</span><span class="texto-controle">Leitura desligada</span>
+          </button>
+        </div>
       </header>
 
-      <section id="app-content" class="conteudo"></section>
+      <main id="app-content" class="conteudo" tabindex="-1" aria-label="Percurso de acolhimento"></main>
+      <div id="anuncios" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
-      <footer>
-        <span>Feito para aprender, comunicar e participar.</span>
+      <footer class="rodape">
+        <p>Suas respostas ficam somente nesta página: não são enviadas nem salvas.</p>
+        <p>A leitura em voz alta usa a síntese de voz do seu navegador ou dispositivo.</p>
       </footer>
-    </main>
-    <script src="script.js"></script>
-  </body>
-
-  <body>
+    </div>
   </body>
 </html>
